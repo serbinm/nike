@@ -1,0 +1,60 @@
+@function size-768($min, $max, $viewport-max, $viewport-min) {
+  $diff: $max - $min;
+  @return calc(#{$min + px} + $diff * ((100vw - #{$viewport-min + px}) / $viewport-max) * 2);
+}
+
+@function size-1400($min, $max, $container-size) {
+  // $min = minimum, $max = maximum
+  $diff: $max - $min;
+  @return calc(#{$min + px} + $diff * ((100vw - 768px) / $container-size) * 2);
+}
+
+.glory {
+  padding: 100px 0 100px;
+
+  @media (max-width: 768px) {
+    padding: size-768(50, 100, 768, 375) 0;
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      gap: size-768(15, 30, 768, 375)
+    }
+  }
+
+  &__thanks {
+    font-size: 24px;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+      font-size: size-768(12, 24, 768, 375);
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 900;
+
+    @media (max-width: 768px) {
+      font-size: size-768(24, 48, 768, 375);
+    }
+  }
+
+  &__flag {
+    width: 80px;
+    height: 50px;
+
+    @media (max-width: 768px) {
+      width: size-768(60, 80, 768, 375);
+      height: size-768(30, 50, 768, 375);
+    }
+  }
+}
