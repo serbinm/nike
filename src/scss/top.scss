@@ -3,10 +3,15 @@
   @return calc(#{$min + px} + $diff * ((100vw - #{$viewport-min + px}) / $viewport-max) * 2);
 }
 
+@function size-768-extra($min, $max, $viewport-max, $viewport-min) {
+  $diff: $max - $min;
+  @return calc(#{$min + px} + $diff * ((100vw - #{$viewport-min + px}) / $viewport-max) * 2.6);
+}
+
 @function size-1400($min, $max, $container-size) {
   // $min = minimum, $max = maximum
   $diff: $max - $min;
-  @return calc(#{$min + px} + $diff * ((100vw - 768px) / $container-size) * 2);
+  @return calc(#{$min + px} + $diff * (((100vw - 768px) / $container-size)) * 2);
 }
 
 .swiper-button-next,
@@ -29,8 +34,9 @@
 
 
 .top {
-  padding-top: 115px;
-  padding-bottom: 56px;
+  padding: 115px 0 78px;
+  // padding-top: 115px;
+  // padding-bottom: 78px;
 
   overflow: hidden;
 
@@ -190,16 +196,18 @@
     position: relative;
     background-image: url("@img/top/top__nike.png");
     background-repeat: no-repeat;
-    background-position-x: 142px;
+    // background-position-x: 142px;
+    background-position-x: 50%;
     background-position-y: 93px;
 
     @media (max-width: 768px) {
       // width: 235px !important;
-      width: 235px;
+      // width: 235px;
       height: 336px !important;
       padding: 68px 19px 43px 32px !important;
       background-image: url("@img/top/top__nike--small.png");
-      background-position-x: 85px;
+      // background-position-x: 85px;
+      background-position-x: 50%;
       background-position-y: 65px;
     }
   }
@@ -211,6 +219,7 @@
     margin-left: -17px;
     position: relative;
     z-index: 10;
+    align-self: center;
 
     @media (max-width: 768px) {
 
@@ -282,19 +291,40 @@
   }
 }
 
-.swiper {}
+.swiper {
+
+  /* 
+375 -> 0 70px
+550 -> 145px
+*/
+  padding: 0;
+
+  @media (max-width: 550px) {
+    padding: 0 size-768-extra(70, 145, 550, 375);
+  }
+
+  // @media (max-width: 700px) {
+  //   padding: 0 145px;
+  // }
+}
 
 .swiper-slide {
-  width: 392px !important;
+  display: flex;
+  flex-direction: column;
+
+  @media (width: 550px) {
+    width: 235px !important;
+  }
 
   @media (max-width: 768px) {
-    width: 235px !important;
+    // width: 235px !important;
   }
 }
 
 .swiper-wrapper {
-  width: 100%;
-  justify-content: space-between !important;
-  gap: 50px;
-  padding: 20px 25px !important;
+  // overflow: hidden !important;
+  // width: 100%;
+  // justify-content: space-between !important;
+  // gap: 50px;
+  padding: 20px 0px !important;
 }
