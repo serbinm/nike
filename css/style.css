@@ -613,6 +613,10 @@ body {
   right: 20px;
   top: 32px
 }
+.more__wrapper {
+  max-width: 1400px;
+  margin: 0 auto
+}
 .more__title {
   font-size: 40px;
   text-transform: uppercase;
