@@ -10,6 +10,11 @@
 }
 
 .more {
+  &__wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   &__title {
     font-size: 40px;
     text-transform: uppercase;
