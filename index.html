@@ -6,17 +6,17 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- #region -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20241003201806" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20241014221404" />
 	<!-- #endregion -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241003201806">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241014221404">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 
 	<!-- #region font Montserrat -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241003201806" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241014221404" rel="stylesheet">
 	<!-- #endregion -->
 
 
@@ -107,7 +107,7 @@
 
 				<div class="header__icons">
 					<a href="" class="header__icon header__icon--login">
-						<img src="img/header/login.svg" alt="" class="header__image header__image--login">
+						<img src="img/header/biba.svg" alt="" class="header__image header__image--login">
 					</a>
 
 					<a href="" class="header__icon header__icon--search">
@@ -264,6 +264,17 @@
 							<a href="" class="sneakers-container__arrow"></a>
 						</div>
 
+						<div class="swiper-slide sneakers-container__item">
+							<img src="img/top/top__item--2.webp" alt="" class="sneakers-container__image">
+
+							<h3 class="sneakers-container__name">KD13 EP</h3>
+
+							<div class="sneakers-container__price">$20.99</div>
+
+							<a href="" class="sneakers-container__arrow"></a>
+						</div>
+
+
 					</div>
 				</div>
 
@@ -384,7 +395,7 @@
 			</ul>
 		</div>
 	</footer>
-	<script src="js/app.min.js?_v=20241003201806"></script>
+	<script src="js/app.min.js?_v=20241014221404"></script>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
@@ -404,23 +415,49 @@
 		});
 	</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20241003201806"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20241014221404"></script>
 
 	<script>
 		const swiper = new Swiper('.swiper', {
 			// Optional parameters
-			loop: true,
+			// loop: true,
 			centeredSlides: true,
 			// effect: 'coverflow',
-			slidesPerView: 3,
+			// slidesPerView: auto,
+			initialSlide: 2,
 			grabCursor: true,
-			initialSlide: 3,
+			// slidesPerGroup: 2,
+			// slidesPerGroup: 2,
+			// initialSlide: 1,
 
+			// slidesPerView: 2,
+			// spaceBetween: 70,
 
 			breakpoints: {
-				768: {
-					initialSlide: 1,
+				1150: {
+					// initialSlide: 1,
+					spaceBetween: 50,
 					slidesPerView: 3,
+				},
+
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 100,
+				},
+
+				700: {
+					slidesPerView: 3,
+					spaceBetween: 50,
+				},
+
+				550: {
+					slidesPerView: 2,
+					spaceBetween: 80,
+				},
+
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 100,
 				}
 			},
 			// If we need pagination
